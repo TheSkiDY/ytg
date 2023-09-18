@@ -1,0 +1,326 @@
+Form Button {
+  width: 100%;
+}
+
+h2 {
+  color: #313131;
+}
+
+h6 {
+  color: greenyellow;
+}
+
+hr.line {
+  border: 1px solid #313131;
+  width: 175px;
+}
+
+.app {
+  padding-top: 10px;
+  width: 100%;
+  text-align: center;
+}
+
+.lobby {
+  width: 400px;
+  padding-top: 100px;
+  margin: auto;
+}
+
+.game-screen {
+  background-color: rgb(117, 117, 117);
+  width: 80%;
+  height: 100%;
+  padding: 5px;
+}
+
+.container {
+  display: inline-flex;
+  height: 620px;
+}
+
+.message-form {
+  display: flex;
+}
+
+.message-typein {
+  flex-grow: 1;
+}
+
+.chat-container {
+  background-color: rgb(65, 65, 65);
+  width: 35%;
+  padding: 20px;
+}
+
+.chat {
+  display: grid;
+}
+
+.leave-room {
+  text-align: right;
+  padding: 12px;
+}
+
+.player-counter {
+  color: white;
+  margin-bottom: 10px;
+}
+
+.message-container {
+  height: 420px;    
+  background-color: rgb(37, 37, 37);
+  overflow: auto;
+  border-radius: 5px;
+  margin-bottom: 2px;
+  padding: 5px;
+  border-color: black;
+  border-radius: 10px;
+  border-style: solid;
+}
+
+.player-list {
+  height: 100%;    
+  background-color: rgb(37, 37, 37);
+  border-radius: 5px;
+  margin-bottom: 2px;
+  padding: 3px;
+  border-color: black;
+  border-radius: 10px;
+  border-style: solid;
+  text-align: left;  
+  overflow-x: hidden;
+}
+
+
+.player-list-container {
+  background-color: rgb(65, 65, 65);
+  width: 25%;
+  padding: 20px;
+}
+
+.player-list-element-container {
+  padding: 2px;
+  font-size: 14px;
+}
+
+.player-list-element {
+  display: inline-flex;
+  width: 100%;
+}
+
+.player-list-element:hover {
+  background-color: rgb(46, 45, 45);
+}
+
+.player-list-name {
+  padding: 2px;
+  margin: 5px;
+  width: 80%;
+  overflow-x: hidden;
+}
+
+.player-list-icons {
+  display: inline-flex;
+  text-align: center;
+}
+
+.player-list-crown, .player-list-kick {
+  padding: 5px;
+}
+
+.img-crown:hover, .img-kick:hover {
+  border-color: white;
+  border-radius: 4px;
+  border-style: solid;
+}
+
+.player-in-list {
+  color: white;
+}
+
+.admin-in-list {
+  color : red;
+}
+
+.user-message {
+  text-align: left;
+  padding-right: 5px;
+  font-size: 9px;
+}
+
+.message {
+  display: inline-flex;
+  padding: 2px;
+  font-size: 15px;
+  color:white;
+}
+
+.time-in-message {
+  display: inline;
+  font-size: 12px;
+  padding: 3px;
+  color:#a3a3a3
+}
+
+.message-bot {
+  display: inline-flex;
+  padding: 2px;
+  font-size: 15px;
+  color:yellow;
+}
+
+
+.from-user {
+  font-size: small;
+  margin-bottom: 3px;
+  margin-right: 5px;
+}
+
+.option-container {
+  margin: 5px;
+  padding: 5px;
+  background-color: #979797;
+  border-color: black;
+  border-style: solid;
+  border-radius: 3px;
+}
+
+.question-container {
+  margin: 15px;
+  position: relative;
+}
+
+.question-header {
+  width: 100%;
+  align-items: center;
+}
+
+.round-display {
+  color: white;
+  display: inline-flex;
+}
+
+
+.round-display h2 {
+  color: white;
+}
+
+.timer span{
+  color:white;
+  text-shadow: #313131;
+  font-size: 17px;
+  font-weight: 700;
+  padding: 3px;
+  background-color: #313131;
+}
+
+.skip-round-btn {
+  display: inline-flex;
+  align-items: center;
+  position: absolute;
+  left:82%
+}
+
+.video-screen {
+  width: 100%;
+  background-color: navy;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  text-align: left;
+  color: white;
+
+}
+
+.answers-container {
+  width: 100%;;
+  /* border-color: red;
+  border-style: solid; */
+}
+
+.ans{
+  font-size: 11px;
+  color:black;
+  font-weight: bold;
+  margin: 2px;
+  border-color: black;
+  border-style: solid;
+  width: 45%;
+  padding: 3px;
+  min-height: 50px;
+  user-select: none;
+}
+
+.ans-hover{
+  cursor: pointer;
+}
+
+.ans-hover:hover{
+  border-color: white;
+}
+
+.ans-hover:active{
+  color:white;
+}
+
+.ans-1 {
+  background-color: #f08989;
+  display: inline-flex;
+}
+
+.ans-2 {
+  background-color: #a5eb9d;
+  display: inline-flex;
+}
+
+.ans-3 {
+  background-color: #e5eb9d;
+  display: inline-flex;
+}
+
+.ans-4 {
+  background-color: #a0a7eb;
+  display: inline-flex;
+}
+
+.screen-container{
+  position: relative;
+}
+
+.curtain {
+  width: 600px;
+  min-height: 50px;
+  position: absolute;
+  top:0;
+  left:0;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 1) 10%, rgba(0, 0, 0, 0) 20%);
+}
+
+.validate-btn {
+  margin: 5px;
+}
+
+.validate-indicator {
+  background-color: rgb(176, 175, 175);
+  margin: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 5px;
+
+}
+
+.validate-container {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.room-container {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.random-code {
+  margin: 4px;
+  padding-top: px;
+  cursor: pointer;
+}
