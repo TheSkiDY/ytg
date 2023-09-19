@@ -7,27 +7,27 @@ const GameConfigPlayer = ({
 
     return <div>
         <div>
-            <h1>Player screen</h1>
+            <h1>Current settings</h1>
         </div>
         <div>
-            <h2>
+            <h3>
                 Playlist URL: {gameOptions.PlaylistLink}
-            </h2>
+            </h3>
         </div>
         <div>
-            <h2>
+            <h3>
                 Media type: {gameOptions.MediaType}
-            </h2>
+            </h3>
         </div>
         <div>
-            <h2>
+            <h3>
                 Answer type: {gameOptions.AnswerType == "Closed" ? "Choose between 4 options" : (gameOptions.AnswerType == "Open" ? "Type an answer directly" : "")}
-            </h2>
+            </h3>
         </div>
         <div>
-            <h2>
+            <h3>
                 Time for round: {gameOptions.Time} seconds
-            </h2>
+            </h3>
         </div>
 
 

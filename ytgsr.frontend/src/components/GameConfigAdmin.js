@@ -164,6 +164,7 @@ const GameConfigAdmin = ({ connection,
                 onMouseUp={onChangeHandler}
                 onChange={e=>{
                 setGameOptions((op) => ({...op, ["Rounds"]:e.target.value, ["validated"]:false}));
+                setValidateButtonDisabled(false);
                 }}>
                 
             </FormRange>

@@ -252,7 +252,7 @@ namespace YTGsr
                 results.Add((p.Name, p.Points, p.PointsGotThisRound));
                 p.PointsGotThisRound = 0;
             }
-            var sortedResults = results.OrderBy(o => o.Item2).ToList();
+            var sortedResults = results.OrderByDescending(o => o.Item2).ToList();
 
             StringBuilder sb = new StringBuilder();
             foreach(var r in sortedResults)

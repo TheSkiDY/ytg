@@ -31,7 +31,7 @@ const AnswersClosed = ({
     return <div className='answers-container'>
                 {gameState.Answers.map((ans, index) =>
                     <div className={'ans ' + activeHoverClass +' ans-'+(index+1)} onClick={(e) => onAnswerClick(index)}>
-                        {lettersArr[index]}. {ans}
+                        {lettersArr[index]}. {ans} {(index == gameState.ProperAnswer)?'[correct]':''}
                     </div>
                 )}
             </div>

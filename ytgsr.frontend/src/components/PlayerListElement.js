@@ -8,8 +8,11 @@ const PlayerListElement = ({user, activeUser, adminUuid, kickPlayer, setAdmin}) 
     return <div className="player-list-element-container">
             <div className="player-list-element">
                 <div className="player-list-name">
-                    {       user.uuid == adminUuid ? <div className="admin-in-list">{user.name}</div>
-                        :   <div className="player-in-list">{user.name}</div>
+                    {       user.uuid == adminUuid 
+                        ?   <div className="admin-in-list">{user.name}</div>
+                        :   (user.uuid == activeUser.uuid)
+                            ? <div className="me-in-list">{user.name}</div>
+                            : <div className="player-in-list">{user.name}</div>
                     }
                 </div>
                 {activeUser.uuid == adminUuid && user.uuid != activeUser.uuid

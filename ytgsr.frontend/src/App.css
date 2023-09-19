@@ -143,6 +143,10 @@ hr.line {
   color : red;
 }
 
+.me-in-list {
+  color : rgb(250, 226, 16);
+}
+
 .user-message {
   text-align: left;
   padding-right: 5px;

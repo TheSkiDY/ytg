@@ -127,9 +127,6 @@ const Question = ({
                 ansArray={ansArray}
                 onAnswerClick={onAnswerClick} />
         }
-        <div>
-            Selected option: {indexChosen}
-        </div>
     </div>
 }
 
