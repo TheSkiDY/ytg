@@ -91,8 +91,7 @@ namespace YTGsr.Hubs
 
                 Clients.Group(roomCode).ReceiveMessage(_infoBot, $"{userConnection.User} left the room!", Util.GetHourFromDateTime(DateTime.Now));
                 RemoveUserFromRoom(userConnection.Room, userConnection);
-                SendConnectedUsers(roomCode);   
-                //if(connections.Values.Where(c => c.Room == roomCode).Count() == 0)
+                SendConnectedUsers(roomCode);  
                 if(manager.IsRoomEmpty(roomCode))
                 {
                     manager.RemoveRoom(roomCode);
@@ -118,7 +117,6 @@ namespace YTGsr.Hubs
             {
                 try
                 {
-                    Room room = manager.GetRoom(callerConnection.Room);
                     var userConnection = connections.Values.Where(c => c.Room == callerConnection.Room && c.Uuid == id).FirstOrDefault();
                     var connectionId = connections.FirstOrDefault(u => u.Value == userConnection).Key;
                     await Clients.Client(connectionId).KickFromRoom();

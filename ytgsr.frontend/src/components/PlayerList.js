@@ -11,7 +11,6 @@ const PlayerList = ({connection, user, adminUuid, kickPlayer, setAdmin, playerLi
             )};
         </div>
     </div>
-
 }
 
 export default PlayerList;

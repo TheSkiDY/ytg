@@ -77,57 +77,57 @@ const Question = ({
     }
 
 
-    return <div className="question-container">
-        <div className="question-header">
-            <div className="round-display">
-                {
-                    <h2>Round {gameState.Round}</h2>
-                }
-            </div>
-            {user.uuid==adminUuid ?
-            (
-                <div className="skip-round-btn">
-                    <Button 
-                        variant="primary"
-                        onClick={advanceGameState}>
-                        Skip Round
-                    </Button>
-                </div>
-            ): null}
-            <div className='timer'>
-                <span>
-                    {
-                        seconds<0
-                        ? '00:00'
-                        : '00:'+String(seconds).padStart(2,'0')
-                    }
-                </span>
-            </div>
-        </div>
-        <div ref={screenRef} style={{minHeight: screenHeight}} className='video-screen'>
+return <div className="question-container">
+    <div className="question-header">
+        <div className="round-display">
             {
-                {
-                    "Audio": <VideoEmbed gameOptions={gameOptions} gameState={gameState} width={screenWidth} height={screenHeight}></VideoEmbed>,
-                    "Video": <VideoEmbed gameOptions={gameOptions} gameState={gameState} width={screenWidth} height={screenHeight}></VideoEmbed>,
-                    "Thumbnail": 
-                    <img src={'https://i.ytimg.com/vi/' + gameState.URL + '/sddefault.jpg'} height={screenHeight} width={screenWidth}> 
-                    </img>
-                }[gameOptions.MediaType]
+                <h2>Round {gameState.Round}</h2>
             }
-            
-            
         </div>
-        {gameOptions.AnswerType == "Closed"
-            ?  <AnswersClosed 
-                gameState={gameState}
-                activeHoverClass={activeHoverClass}
-                onAnswerClick={onAnswerClick} />
-            : <AnswersOpen
-                gameState={gameState}
-                ansArray={ansArray}
-                onAnswerClick={onAnswerClick} />
-        }
+        {user.uuid==adminUuid ?
+        (
+            <div className="skip-round-btn">
+                <Button 
+                    variant="primary"
+                    onClick={advanceGameState}>
+                    Skip Round
+                </Button>
+            </div>
+        ): null}
+        <div className='timer'>
+            <span>
+                {
+                    seconds<0
+                    ? '00:00'
+                    : '00:'+String(seconds).padStart(2,'0')
+                }
+            </span>
+        </div>
     </div>
+    <div ref={screenRef} style={{minHeight: screenHeight}} className='video-screen'>
+        {
+            {
+                "Audio": <VideoEmbed gameOptions={gameOptions} gameState={gameState} width={screenWidth} height={screenHeight}></VideoEmbed>,
+                "Video": <VideoEmbed gameOptions={gameOptions} gameState={gameState} width={screenWidth} height={screenHeight}></VideoEmbed>,
+                "Thumbnail": 
+                <img src={'https://i.ytimg.com/vi/' + gameState.URL + '/sddefault.jpg'} height={screenHeight} width={screenWidth}> 
+                </img>
+            }[gameOptions.MediaType]
+        }
+        
+        
+    </div>
+    {gameOptions.AnswerType == "Closed"
+        ?  <AnswersClosed 
+            gameState={gameState}
+            activeHoverClass={activeHoverClass}
+            onAnswerClick={onAnswerClick} />
+        : <AnswersOpen
+            gameState={gameState}
+            ansArray={ansArray}
+            onAnswerClick={onAnswerClick} />
+    }
+</div>
 }
 
 export default Question;

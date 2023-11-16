@@ -12,11 +12,6 @@ const VideoEmbed = ({
 }) =>
 {
     return  <div class='screen-container'>
-        {/* <iframe 
-            width={width} height={height} 
-            src={'https://www.youtube.com/embed/'+gameState.URL+'?si=&amp;?wmode=transparent&amp;start='+gameState.PlayTime+'&amp;autoplay=1&amp;mute=1'}
-            title="YT video"
-        ></iframe> */}
         <ReactPlayer
             width={width}
             height={height}

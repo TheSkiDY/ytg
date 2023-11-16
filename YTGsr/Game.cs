@@ -98,13 +98,13 @@ namespace YTGsr
         {
             bool validIndex = false;
             int videoId = 0;
-
-            //randomize video to show
             while (!validIndex)
             {
                 validIndex = true;
                 videoId = rd.Next(0, playlistLength);
-                if(usedIndices.Contains(videoId) || videos[videoId].title.ToLower() == "deleted video" || videos[videoId].title.ToLower() == "private video")
+                if(usedIndices.Contains(videoId) 
+                    || videos[videoId].title.ToLower() == "deleted video" 
+                    || videos[videoId].title.ToLower() == "private video")
                 {
                     validIndex = false;
                 }
@@ -232,7 +232,6 @@ namespace YTGsr
 
         public async Task Init()
         {
-            //TO DO: check if last playlist wasnt' changed to avoid new API requests
             if (lastPlaylistId != playlistId)
             {
                 videos.Clear();

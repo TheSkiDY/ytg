@@ -71,7 +71,7 @@ const GameConfigAdmin = ({ connection,
         const { name, value } = e.target;
         setGameOptions((prevState) => ({ ...prevState, [name]: value }));
         updateOptionInPanel(name, value);
-      };    
+        };    
 
     return <Form onSubmit={e => {
         e.preventDefault();
@@ -105,6 +105,7 @@ const GameConfigAdmin = ({ connection,
                     setValidateButtonDisabled(true);
                     validatePlaylist(localLink);
                     setValidatingInProgress(true);
+                    setGameOptions((op) => ({...op, ["validated"]: 2}));
                     //setGameOptions((op) => ({...op, ["validated"]:true})); //this is for debugging
                     }}>
                     Validate
@@ -182,21 +183,6 @@ const GameConfigAdmin = ({ connection,
                 Launch
             </Button>
         </div>
-        {/* <div>
-            {gameOptions.validated.toString()}
-        </div>
-        <div>
-            {gameOptions.MediaType}
-        </div>
-        <div>
-            {gameOptions.AnswerType}
-        </div>
-        <div>
-            {gameOptions.Time}
-        </div>
-        <div>
-            rds: {gameOptions.Rounds}
-        </div> */}
     </Form>
 
 }

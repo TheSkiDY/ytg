@@ -84,7 +84,9 @@ const App = () =>
         setGameOptions((op) => ({ ...op, ["PlaylistLink"]: url, ["PlaylistType"]:playlisttype, ["MediaType"]:mediatype, ["AnswerType"]:answertype, ["Time"]:time, ["Rounds"]:rounds }));
       })
 
-      connection.on("ValidateLink", (validated) =>{
+      connection.on("ValidateLink", (validated) =>
+      {
+          console.log('validated?: ' + validated);
           setGameOptions((op)=>({...op, ["validated"]:validated}));
       })
 

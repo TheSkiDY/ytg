@@ -142,6 +142,13 @@ namespace YTGsr
 
         public void RemovePlayer(UserConnection userConnection)
         {
+            Player player = players.Where(p => p.UserConnection == userConnection).FirstOrDefault();
+            players.Remove(player);
+            if(player == admin && players.Count > 0)
+            {
+                admin = players[0];
+            }
+
             try
             {
                 players.Remove(players.Where(p => p.UserConnection == userConnection).FirstOrDefault());

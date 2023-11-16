@@ -18,7 +18,6 @@ const Game = ({
     results, ansArray,
     joinedInProgress}) => {
 
-    const [test, setTest] = useState("t");
     const advanceGameState = async() =>
     {
         try
@@ -77,6 +76,6 @@ const Game = ({
         </div>
         <Chat messages={messages} sendMessage={sendMessage} closeConnection={closeConnection} playerCount={playerCount} />
     </div>
-}
+    }
 
 export default Game;

@@ -9,23 +9,23 @@ namespace YTGsr
     {
         YouTubeService YTService;
 
-        private string IsURLValid(string url)
-        {
-            string playlistRegex = @"^(?:https?:\/\/)?(?:www\.)?youtube\.com\/playlist\?list=([a-zA-Z0-9_-]+)";
+private string IsURLValid(string url)
+{
+    string playlistRegex = @"^(?:https?:\/\/)?(?:www\.)?youtube\.com\/playlist\?list=([a-zA-Z0-9_-]+)";
 
-            Regex regex = new Regex(playlistRegex);
-            Match match = regex.Match(url);
+    Regex regex = new Regex(playlistRegex);
+    Match match = regex.Match(url);
 
-            if (match.Success && match.Groups.Count > 1)
-            {
-                string result = match.Groups[1].Value;
-                return result;
-            }
-            else
-            {
-                return string.Empty;
-            }
-        }
+    if (match.Success && match.Groups.Count > 1)
+    {
+        string result = match.Groups[1].Value;
+        return result;
+    }
+    else
+    {
+        return string.Empty;
+    }
+}
 
         private async Task<bool> ValidateIdAndLength(string playlistId, int roundCount)
         {

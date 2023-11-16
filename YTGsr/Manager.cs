@@ -94,72 +94,72 @@ namespace YTGsr
             await _hubContext.Clients.Group(roomCode).PlayersCount(playerCount);
         }
 
-        public async Task UpdateOptionInConfigPanel(string optionStr, string arg, string roomCode)
+public async Task UpdateOptionInConfigPanel(string optionStr, string arg, string roomCode)
+{
+    try
+    {
+    Room.Option option = default;
+    Room room = GetRoom(roomCode);
+    if (Enum.TryParse<Room.Option>(optionStr, true, out option))
+    {
+        switch (option)
         {
-            try
-            {
-                Room.Option option = default;
-                Room room = GetRoom(roomCode);
-                if (Enum.TryParse<Room.Option>(optionStr, true, out option))
+            case Room.Option.PlaylistType:
+                Game.PlaylistType list = default;
+                if (Enum.TryParse<Game.PlaylistType>(arg, true, out list))
                 {
-                    switch (option)
-                    {
-                        case Room.Option.PlaylistType:
-                            Game.PlaylistType list = default;
-                            if (Enum.TryParse<Game.PlaylistType>(arg, true, out list))
-                            {
-                                room.game.SetPlaylistType(list);
-                            }
-                            break;
-
-                        case Room.Option.PlaylistLink:
-                            room.game.SetPlaylistURL(arg);
-                            break;
-
-                        case Room.Option.MediaType:
-                            Game.MediaType media = default;
-                            if (Enum.TryParse<Game.MediaType>(arg, true, out media))
-                            {
-                                room.game.SetMediaType(media);
-                            }
-                            break;
-
-                        case Room.Option.AnswerType:
-                            Game.AnswerType answer = default;
-                            if (Enum.TryParse<Game.AnswerType>(arg, true, out answer))
-                            {
-                                room.game.SetAnswerType(answer);
-                            }
-                            break;
-
-                        case Room.Option.Time:
-                            int time = default;
-                            if (Int32.TryParse(arg, out time))
-                            {
-                                room.game.SetTime(time);
-                            }
-                            break;
-
-                        case Room.Option.Rounds:
-                            int rounds = default;
-                            if(Int32.TryParse(arg, out rounds))
-                            {
-                                room.game.SetRoundsAmount(rounds);
-                            }
-                            break;
-                    }
+                    room.game.SetPlaylistType(list);
                 }
-                await _hubContext.Clients.Group(roomCode).UpdatePanel(room.game.playlistId, 
-                    room.game.playlistType.ToString(), 
-                    room.game.mediaType.ToString(), 
-                    room.game.answerType.ToString(), 
-                    room.game.time,
-                    room.game.roundCount);
-            }
-            catch
-            {
+                break;
 
-            }
+            case Room.Option.PlaylistLink:
+                room.game.SetPlaylistURL(arg);
+                break;
+
+            case Room.Option.MediaType:
+                Game.MediaType media = default;
+                if (Enum.TryParse<Game.MediaType>(arg, true, out media))
+                {
+                    room.game.SetMediaType(media);
+                }
+                break;
+
+            case Room.Option.AnswerType:
+                Game.AnswerType answer = default;
+                if (Enum.TryParse<Game.AnswerType>(arg, true, out answer))
+                {
+                    room.game.SetAnswerType(answer);
+                }
+                break;
+
+            case Room.Option.Time:
+                int time = default;
+                if (Int32.TryParse(arg, out time))
+                {
+                    room.game.SetTime(time);
+                }
+                break;
+
+            case Room.Option.Rounds:
+                int rounds = default;
+                if(Int32.TryParse(arg, out rounds))
+                {
+                    room.game.SetRoundsAmount(rounds);
+                }
+                break;
+        }
+    }
+    await _hubContext.Clients.Group(roomCode).UpdatePanel(room.game.playlistId, 
+        room.game.playlistType.ToString(), 
+        room.game.mediaType.ToString(), 
+        room.game.answerType.ToString(), 
+        room.game.time,
+        room.game.roundCount);
+    }
+    catch
+    {
+
+    }
         }
 
         public async Task SendTestMessage(string message, string roomCode)

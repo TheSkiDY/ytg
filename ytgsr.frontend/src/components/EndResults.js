@@ -10,7 +10,7 @@ const EndResults = ({
 }) =>
 {
     return <div>
-        <h1>Final Results</h1>
+        <h1>Final Results:</h1>
         <div className="results">
             {results.map((p)=>
                 <div>

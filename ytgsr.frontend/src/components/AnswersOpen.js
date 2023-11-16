@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import Select from 'react-select'
 
 const AnswersOpen = ({
-    gameState,
     ansArray,
     onAnswerClick
 }) =>
@@ -17,7 +16,7 @@ const AnswersOpen = ({
                 setDisabledInput(true);
             }}
             options={ansArray}
-            maxMenuHeight={130}
+            maxMenuHeight={100}
             isDisabled={disabledInput}
             autoFocus
         />
